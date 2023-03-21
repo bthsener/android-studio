@@ -12,12 +12,12 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button add;
-    Button sub;
-    Button mul;
-    Button div;
-    EditText number1, number2;
-    TextView result;
+    private Button add;
+    private Button sub;
+    private Button mul;
+    private Button div;
+    private EditText number1, number2;
+    private TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,43 +33,42 @@ public class MainActivity extends AppCompatActivity {
         number1 = findViewById(R.id.editText1);
         number2 = findViewById(R.id.editText2);
 
-        View.OnClickListener addition = (view) -> {
-            int num1 = editTextToInteger(number1);
-            int num2 = editTextToInteger(number2);
-            result.setText(String.valueOf(num1+num2));
-        };
+        add.setOnClickListener(v -> calculateIt(Operations.ADDITION));
+        sub.setOnClickListener(v -> calculateIt(Operations.SUBTRACTION));
+        div.setOnClickListener(v -> calculateIt(Operations.DIVISION));
+        mul.setOnClickListener(v -> calculateIt(Operations.MULTIPLICATION));
+    }
 
-        View.OnClickListener subtraction = (view) -> {
-            int num1 = editTextToInteger(number1);
-            int num2 = editTextToInteger(number2);
-            result.setText(String.valueOf(num1-num2));
-        };
+    void calculateIt(Operations operation){
+        int num1 = editTextToInteger(number1);
+        int num2 = editTextToInteger(number2);
+        double resultt = 0;
 
-        View.OnClickListener division = (view) -> {
-            int num1 = editTextToInteger(number1);
-            int num2 = editTextToInteger(number2);
-            try {
-                double resultt = num1/num2;
-                result.setText(String.valueOf(resultt));
-            }catch (ArithmeticException e){
-                Toast.makeText(this, "0'a Bölmezsiniz", Toast.LENGTH_SHORT).show();
-            }
-        };
+        switch (operation){
+            case ADDITION:
+                resultt = num1 + num2;
+                break;
+            case SUBTRACTION:
+                resultt = num1 - num2;
+                break;
+            case DIVISION:
+                resultt = (double) num1 / num2;
+                if (num2 == 0)
+                    Toast.makeText(this, "0'a Bölemezsin.", Toast.LENGTH_SHORT).show();
+                break;
+            case MULTIPLICATION:
+                resultt = num1 * num2;
+                break;
+        }
 
-            View.OnClickListener multiplication = (view) -> {
-            int num1 = editTextToInteger(number1);
-            int num2 = editTextToInteger(number2);
-            result.setText(String.valueOf(num1*num2));
-        };
-
-        add.setOnClickListener(addition);
-        sub.setOnClickListener(subtraction);
-        div.setOnClickListener(division);
-        mul.setOnClickListener(multiplication);
+        result.setText(String.valueOf(resultt));
     }
 
     static int editTextToInteger(EditText editText){
         return Integer.parseInt(editText.getText().toString());
     }
 
+    public enum Operations{
+        ADDITION, SUBTRACTION, DIVISION, MULTIPLICATION
+    }
 }
