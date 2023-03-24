@@ -10,8 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-
     private Button add;
     private Button sub;
     private Button mul;
@@ -71,4 +69,5 @@ public class MainActivity extends AppCompatActivity {
     public enum Operations{
         ADDITION, SUBTRACTION, DIVISION, MULTIPLICATION
     }
+
 }
