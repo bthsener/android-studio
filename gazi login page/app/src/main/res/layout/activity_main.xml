@@ -48,6 +48,8 @@
             android:hint="kullanıcı adı:"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/icon_username"
+            android:drawablePadding="5dp"
             />
         <EditText
             android:id="@+id/EditTextPassword"
@@ -57,6 +59,8 @@
             android:textSize="20sp"
             android:layout_marginTop="20dp"
             android:inputType="textPassword"
+            android:drawableStart="@drawable/icon_password"
+            android:drawablePadding="5dp"
             />
     </LinearLayout>
 
@@ -66,13 +70,14 @@
         android:layout_height="wrap_content"
         android:text="Giriş Yap"
         android:textColor="@color/black"
-        android:background="@drawable/custombutton"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/editTextsLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="50dp"
+        android:backgroundTint="@color/dark_gray"
+        android:background="@drawable/custombutton"
         />
 
     <LinearLayout

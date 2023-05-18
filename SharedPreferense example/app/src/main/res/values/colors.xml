@@ -7,5 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_gray">#B8B8B8B8</color>
+    <color name="gaziKoyuMavi">#232B69</color>
+    <color name="gaziAcıkMavi">#71BCE8</color>
+    <color name="red">#E55A54</color>
 </resources>

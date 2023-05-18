@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="40dp"
+    >
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/logoGazi"
+        android:src="@drawable/gazi_universitesi_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextUsername"
+        android:hint="Kullanıcı Adı:"
+        app:layout_constraintTop_toBottomOf="@+id/logoGazi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextLocation"
+        android:hint="Lokasyon:"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/editTextYear"
+        android:hint="Yıl:"
+        android:maxLength="4"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/buttonSave"
+            app:layout_constraintTop_toBottomOf="@+id/editTextYear"
+            android:text="Kaydet"
+            android:backgroundTint="@color/gaziKoyuMavi"
+            app:cornerRadius="100dp"
+            android:layout_marginTop="20dp"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearButtons"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave"
+        android:orientation="horizontal"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/buttonDisplay"
+            android:text="Görüntüle"
+            android:backgroundTint="@color/gaziAcıkMavi"
+            app:cornerRadius="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/buttonDelete"
+            android:text="Temizle"
+            android:backgroundTint="@color/red"
+            app:cornerRadius="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewUsername"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/linearButtons"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewLocation"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsername"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif-monospace"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewYear"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
